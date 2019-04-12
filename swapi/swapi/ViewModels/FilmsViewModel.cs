@@ -13,9 +13,9 @@ namespace swapi.ViewModels
 {
     public class FilmsViewModel : INotifyPropertyChanged
     {
-        private List<Film> _films;
+        private IList<Film> _films;
 
-        public List<Film> Films
+        public IList<Film> Films
         {
             get => _films;
             set
@@ -40,9 +40,10 @@ namespace swapi.ViewModels
             {
                 try
                 {
-                    var responseContent = await client.GetAsync(Url);
-                    Rootobject test = JsonConvert.DeserializeObject<Rootobject>(responseContent.ToString());
-                    List<Film> films = test.results;
+                    var responseContent = await client.GetStringAsync(Url);// .GetAsync(Url);
+                    Rootobject root = JsonConvert.DeserializeObject<Rootobject>(responseContent.ToString());
+                    List<Film> films = root.results;
+                    Films = films;
 
                     return films;
                 }

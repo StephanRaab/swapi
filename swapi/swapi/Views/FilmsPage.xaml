@@ -7,7 +7,7 @@
             <Label Text="Select your favorite film:" />
             <Picker Title="Select Film"
                     ItemsSource="{Binding Films}"
-                    ItemDisplayBinding="{Binding Films.title}" />
+                    ItemDisplayBinding="{Binding title}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
