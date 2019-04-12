@@ -40,8 +40,8 @@ namespace swapi.ViewModels
             {
                 try
                 {
-                    var responseContent = await client.GetStringAsync(Url);// .GetAsync(Url);
-                    Rootobject root = JsonConvert.DeserializeObject<Rootobject>(responseContent.ToString());
+                    var responseContent = await client.GetStringAsync(Url);
+                    Rootobject root = JsonConvert.DeserializeObject<Rootobject>(responseContent);
                     List<Film> films = root.results;
                     Films = films;
 

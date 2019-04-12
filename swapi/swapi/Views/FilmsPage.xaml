@@ -8,6 +8,8 @@
             <Picker Title="Select Film"
                     ItemsSource="{Binding Films}"
                     ItemDisplayBinding="{Binding title}" />
+
+            <Button Text="Learn More" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
